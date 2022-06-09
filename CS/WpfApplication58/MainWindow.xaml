@@ -1,26 +1,26 @@
 <Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" 
         xmlns:local="clr-namespace:WpfApplication58"
         xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
-        xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
         x:Class="WpfApplication58.MainWindow"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Top">
-            <Button Content="Save" Click="Button_Click_2"/>
-            <Button Content="Load" Click="Button_Click_1"/>
-        </StackPanel>
-        <dxg:GridControl AutoGenerateColumns="AddNew" EnableSmartColumnsGeneration="True" x:Name="grid" Margin="0,20,0,0">
-            <dxg:GridControl.Columns>
-                <dxg:GridColumn FieldName="ID" Header="ID (Widht is not saved)" Name="idColumn"/>
-                <dxg:GridColumn FieldName="Name" Header="Name (Widht is saved)" Name="nameColumn"/>
-            </dxg:GridControl.Columns>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <dxg:GridControl x:Name="grid">
+            <dxg:GridColumn FieldName="ID" Header="ID (Width is not saved)" Name="idColumn"/>
+            <dxg:GridColumn FieldName="Name" Header="Name (Width is saved)" Name="nameColumn"/>
             <dxg:GridControl.View>
-                <dxg:TableView ShowFixedTotalSummary="True" Name="view" FadeSelectionOnLostFocus="False"/>
+                <dxg:TableView x:Name="view"/>
             </dxg:GridControl.View>
         </dxg:GridControl>
 
+        <StackPanel Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Save Layout" Click="OnSaveLayout"/>
+            <Button Content="Restore Layout" Click="OnRestoreLayout"/>
+        </StackPanel>
     </Grid>
 </Window>
