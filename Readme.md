@@ -8,7 +8,7 @@
 
 This example excludes properties from serialization. To do this, handle the [DXSerializer.AllowProperty](http://docs.devexpress.com/WPF/DevExpress.Xpf.Core.Serialization.DXSerializer.AllowProperty) event for an object whose property should not be serialized. In the event handler, set the [AllowPropertyEventArgs.Allow](http://docs.devexpress.com/WPF/DevExpress.Xpf.Core.Serialization.AllowPropertyEventArgs.Allow) property to `False` to prohibit property serialization.
 
-In this example, the **ID** column's [Width](http://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.BaseColumn.Width) property is excluded. Note that since [GridColumn](http://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridColumn) is not a [UIElement](https://docs.microsoft.com/en-us/dotnet/api/system.windows.uielement) descendant, it is necessary to use the [GridColumn.AddHandler](https://docs.microsoft.com/en-us/dotnet/api/system.windows.contentelement.addhandler) method instead of [DXSerializer.AddAllowPropertyHandler](http://docs.devexpress.com/WPF/DevExpress.Xpf.Core.Serialization.DXSerializer.AddAllowPropertyHandler(System.Windows.DependencyObject-DevExpress.Xpf.Core.Serialization.AllowPropertyEventHandler)) to subscribe to the event.
+In this example, the **ID** column's [Width](http://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.BaseColumn.Width) property is excluded. Note that since [GridColumn](http://docs.devexpress.com/WPF/DevExpress.Xpf.Grid.GridColumn) is not a [UIElement](https://docs.microsoft.com/en-us/dotnet/api/system.windows.uielement) descendant, it is necessary to use the [GridColumn.AddHandler](https://docs.microsoft.com/en-us/dotnet/api/system.windows.contentelement.addhandler) method instead of `DXSerializer.AddAllowPropertyHandler` to subscribe to the event.
 
 ![image](https://user-images.githubusercontent.com/65009440/172786765-c651fed7-45ad-4db9-80a4-f90db99b7b88.png)
 
@@ -37,4 +37,5 @@ In this example, the **ID** column's [Width](http://docs.devexpress.com/WPF/Dev
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
 
